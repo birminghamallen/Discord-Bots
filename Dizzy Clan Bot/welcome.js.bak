@@ -1,0 +1,11 @@
+module.exports = client => {
+	const channelId = "921490782958014576";
+	client.on("guildMemberJoin", (member) => {
+		console.log(member);
+		
+		const message = 'Welcome <@${member.id}> to the server';
+		
+		const channel = member.guild.channels.cache.get(channelId);
+		channel.send(message);
+	});
+};
